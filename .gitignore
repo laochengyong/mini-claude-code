@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.transcripts/
+.task_outputs/
+.tasks/
+.worktrees/
+.mailboxes/
+.memory/
+.scheduled_tasks.json
+*.log

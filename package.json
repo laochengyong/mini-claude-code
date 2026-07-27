@@ -1,0 +1,38 @@
+{
+  "name": "mini-claude-code",
+  "version": "1.0.0",
+  "description": "A TypeScript coding-agent harness — tools, hooks, permissions, compaction, recovery, background tasks, cron, teams, worktrees and MCP on one loop.",
+  "type": "module",
+  "main": "dist/cli/index.js",
+  "bin": {
+    "mini-claude-code": "dist/cli/index.js"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "tsx src/cli/index.ts",
+    "start": "node dist/cli/index.js",
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "cross-env MODEL_ID=test-model tsx test/loop.test.ts"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "dotenv": "^16.4.5",
+    "glob": "^11.0.0",
+    "yaml": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "cross-env": "^10.1.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  }
+}
